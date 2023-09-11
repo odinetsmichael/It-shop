@@ -51,9 +51,11 @@ export default {
 };
 </script>
 
-<style scoped>
-svg{
-  margin: 0 10px;
-  fill: green;
+<style scoped lang="scss">
+.top-menu{
+  svg{
+    margin: 0 10px;
+    fill: green;
+  }
 }
 </style>

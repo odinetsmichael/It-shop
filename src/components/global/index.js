@@ -1,11 +1,11 @@
 import Header from './Header.vue'
 import TopMenu from './TopMenu.vue'
-import LeftMenu from './LeftMenu.vue'
+import NavigationMenu from './NavigationMenu.vue'
 
 const components = [
     {name: 'Header', component: Header },
     {name: 'TopMenu', component: TopMenu },
-    {name: 'LeftMenu', component: LeftMenu }
+    {name: 'NavigationMenu', component: NavigationMenu }
 ]
 
 export default {
