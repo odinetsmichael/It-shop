@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <Header></Header>
+<div></div>
 </template>
 
 <style scoped>
