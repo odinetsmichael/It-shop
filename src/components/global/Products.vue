@@ -2,10 +2,9 @@
 </script>
 
 <template>
-
-  <Header/>
-  <router-view></router-view>
-  <NavigationMenu/>
+<div>
+    Products
+</div>
 </template>
 
 <style scoped>

@@ -73,7 +73,7 @@
     height: 100vh;
     overflow-y: auto;
     border-right: 1px solid #dee2e6;
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 12px 0 20px rgba(0, 0, 0, 0.1)
   }
   
   .nav-link {
