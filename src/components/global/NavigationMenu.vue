@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid nav-menu">
       <div class="row">
 
         <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
@@ -56,7 +56,9 @@
   
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
+          <Overview>
+            <router-view></router-view>
+          </Overview>
         </main>
       </div>
     </div>
