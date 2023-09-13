@@ -4,7 +4,7 @@
 </script>
 
 <template>
-    <div class="overview">
+    <div class="overview"   >
         <slot></slot>
     </div>
 </template>
