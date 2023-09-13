@@ -4,6 +4,7 @@ import NavigationMenu from './NavigationMenu.vue'
 import Orders from './Orders.vue'
 import Products from './Products.vue'
 import Overview from './Overview.vue';
+import SessionCounter from './SessionCounter.vue';
 
 const components = [
     {name: 'Header', component: Header },
@@ -11,7 +12,8 @@ const components = [
     {name: 'NavigationMenu', component: NavigationMenu },
     {name: 'Orders', component: Orders },
     {name: 'Products', component: Products },
-    {name: 'Overview', component: Overview }
+    {name: 'Overview', component: Overview },
+    {name: 'SessionCounter', component: SessionCounter }
 ]
 
 export default {
