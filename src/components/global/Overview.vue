@@ -11,6 +11,7 @@
 
 <style scoped>
 .overview{
+    padding: 50px 70px;
     width: 100%;
     height: 100%;
 }
