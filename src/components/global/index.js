@@ -7,8 +7,10 @@ import Overview from './Overview.vue';
 import SessionCounter from './SessionCounter.vue';
 import ListItem from './ListItem.vue';
 import OrderLink from './OrderLink.vue';
+import Popup from './Popup.vue';
 import ButtonDelete from './Buttons/ButtonDelete.vue';
 import ButtonMenu from './Buttons/ButtonMenu.vue';
+
 
 
 const components = [
@@ -21,6 +23,7 @@ const components = [
     {name: 'SessionCounter', component: SessionCounter },
     {name: 'ListItem', component: ListItem },
     {name: 'OrderLink', component: OrderLink },
+    {name: 'Popup', component: Popup },
     {name: 'ButtonDelete', component: ButtonDelete },
     {name: 'ButtonMenu', component: ButtonMenu },
 ]

@@ -1,6 +1,12 @@
 <script setup>
+    import { reactive } from 'vue';
     import {orders} from '../../store/front-end-data.json';
     import {products} from '../../store/front-end-data.json';
+
+    import {ref} from 'vue';
+
+
+
     // import axios from 'axios';
 
     const getOrders = function () {
@@ -33,15 +39,20 @@
         return {usdPrice: usdPrice, uahPrice: uahPrice};
     }
 
-    const deleteOrder = function (ordersId){
-        console.log(`delete order ${ordersId}`);
-        // await axios.delete(`http://host:port/api/orders/${ordersId}`);
+    const isInfoPopupVisible = ref(false);
+    
+    function showConfirmationWindow() {
+        isInfoPopupVisible.value = true;
     }
+    // const deleteOrder = function (ordersId){
+    //     console.log(`delete order ${ordersId}`);
+    //     // await axios.delete(`http://host:port/api/orders/${ordersId}`);
+    // }
 
 </script>
 
-<template>
-    <div class="order-list">
+    <template>
+        <div class="order-list">
         <div class="order-title">
             Приходы
         </div>
@@ -68,7 +79,9 @@
                         {{ getProductsPrice(order.id).uahPrice }}UAH
                     </div>
 
-                    <ButtonDelete class="col-1" @click="deleteOrder(order.id)"/>
+                    <ButtonDelete class="col-1" @click="showConfirmationWindow" />
+                    <Popup v-if="isInfoPopupVisible"/>
+                    <!-- @click="deleteOrder(order.id)" -->
                 </div>
             </ListItem>
         </ul>
