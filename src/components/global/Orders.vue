@@ -1,54 +1,13 @@
 <script setup>
-    import { reactive } from 'vue';
-    import {orders} from '../../store/front-end-data.json';
-    import {products} from '../../store/front-end-data.json';
-
-    import {ref} from 'vue';
-
-
-
     // import axios from 'axios';
-
-    const getOrders = function () {
-        let ordersList = []; 
-        // ordersList = await axios.get('http://host:port/api/orders');
-        ordersList = orders;
-        return ordersList;
-    }
-
-    const getOrderProducts = function (ordersId){
-        const productsList = products;
-        return productsList.filter((product) => {
-            return product.order == ordersId;
-        })
-    }
-
-    const getProductsPrice = function (ordersId){
-        const products = this.getOrderProducts(ordersId);
-        let usdPrice = 0;
-        let uahPrice = 0;
-        for (let i = 0; i < products.length; i++){
-            for (let j = 0; j < products[i].price.length; j++){
-                if (products[i].price[j].symbol == 'USD') {
-                    usdPrice = usdPrice + products[i].price[j].value;
-                } else if (products[i].price[j].symbol == 'UAH'){
-                    uahPrice = uahPrice + products[i].price[j].value;
-                }
-            }
-        }
-        return {usdPrice: usdPrice, uahPrice: uahPrice};
-    }
-
+    import { getOrders} from '../../use/orderUtils';
+    import {getOrderProducts, getProductsPrice } from '../../use/productsUtils';
+    import {ref} from 'vue';
     const isInfoPopupVisible = ref(false);
     
     function showConfirmationWindow() {
         isInfoPopupVisible.value = true;
     }
-    // const deleteOrder = function (ordersId){
-    //     console.log(`delete order ${ordersId}`);
-    //     // await axios.delete(`http://host:port/api/orders/${ordersId}`);
-    // }
-
 </script>
 
     <template>
