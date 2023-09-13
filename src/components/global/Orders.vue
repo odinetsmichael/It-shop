@@ -1,7 +1,9 @@
 <script setup>
     import {orders} from '../../store/front-end-data.json';
     import {products} from '../../store/front-end-data.json';
-    import axios from 'axios';
+    // import axios from 'axios';
+    import ButtonDelete from './Buttons/ButtonDelete.vue';
+import ButtonMenu from './Buttons/ButtonMenu.vue';
 
     const getOrders = function () {
         let ordersList = []; 
@@ -45,25 +47,29 @@
         <ul class="list-group">
             Приходы
             <li class="list-group-item" v-for="order in getOrders()" :key="order.id">
-                <a class="order-link" href="#">{{order.title}}</a>
-                <div>
-                    {{  getOrderProducts(order.id).length }}
-                </div>
-                <div>
-                    {{  order.date }}
-                </div>
+                <div class="row">
+                    <a class="order-link col-4" href="#">
+                        {{order.title}}
+                    </a>
+                    <div class="col-2 d-flex justify-content-around">
+                        <ButtonMenu></ButtonMenu>
+                        <div>
+                            {{  getOrderProducts(order.id).length }}
+                            <div>Продукта</div>
+                        </div>  
 
-                <div>
-                    {{ getProductsPrice(order.id).uahPrice }}
+                    </div>
+                    <div class="col-3">
+                        {{  order.date }}
+                    </div>
+    
+                    <div class="col-2">
+                        {{ getProductsPrice(order.id).usdPrice }}$
+                        {{ getProductsPrice(order.id).uahPrice }}UAH
+                    </div>
+
+                    <ButtonDelete class="col-1" @click="deleteOrder(order.id)"></ButtonDelete>
                 </div>
-                <div>
-                    {{ getProductsPrice(order.id).usdPrice }}
-                </div>
-                <button @click="deleteOrder(order.id)">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
-                        <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-                    </svg>
-                </button>
             </li>
         </ul>
     </div> 
@@ -72,18 +78,28 @@
 <style scoped lang="scss">
 .order-list{
     ul{
-        font-size: 32px;
-        font-weight: bold;
+        font-size: 22px;
+        font-weight: normal;
+        color: #546E7A;
         .list-group-item{
-            padding: 15px;
+            width: 100%;
             border-radius: 4px;
             border: 2px solid #CFD8DC;
-            margin-top: 15px;
             .order-link{
-                font-size: 22px;
-                font-weight: normal;
-                color: #546E7A;
-                padding-left: 15px;
+
+            }
+            .icon-menu{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                width: 35px;
+                height: 35px;
+                border-radius: 100%;
+                border: 1px solid #CFD8DC;
+                .bi-list{
+                    margin-left: -5px;
+                }
             }
         }
     }
