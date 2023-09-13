@@ -6,8 +6,7 @@ import Overview from '../components/global/Overview.vue'
 export default createRouter({
     history: createWebHashHistory(),
     routes: [
-        {path: '/', component: Overview},
-        {path: '/orders', component: Orders},
+        {path: '/orders', component: Orders, alias: '/'},
         {path: '/products', component: Products},
     ]
 })

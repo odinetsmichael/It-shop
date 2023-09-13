@@ -16,7 +16,7 @@
             
             <ul class="nav flex-column mt-4">
               <li class="nav-item">
-                <router-link to="/dashboard" class="nav-link">
+                <router-link to="/orders" class="nav-link">
                   <div class="nav-item-content">
                     <i class="bi bi-house-door"></i> Приход
                   </div>

@@ -5,7 +5,7 @@
 
 <template>
     <div class="overview">
-        <Orders/>
+        <slot></slot>
     </div>
 </template>
 
