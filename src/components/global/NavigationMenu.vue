@@ -67,6 +67,10 @@
 
   
   <style scoped lang="scss">
+  .nav-menu{
+    position: relative;
+    z-index: 5;
+  }
   .sidebar {
     position: -webkit-sticky;
     position: sticky;

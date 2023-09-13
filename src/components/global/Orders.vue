@@ -59,7 +59,7 @@
                         </div>  
 
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 d-flex justify-content-center">
                         {{  order.date }}
                     </div>
     
