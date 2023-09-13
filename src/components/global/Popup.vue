@@ -11,7 +11,8 @@
             <slot></slot>
         </div>
         <div class="popup__footer">
-            popup-footer
+            <PopupButtonCancel/>
+            <PopupButtonDelete/>
         </div>
     </div>
 </template>
@@ -31,7 +32,7 @@
 .popup {
     padding: 0;
     height: max-content;
-    width: 40%;
+    width: 50%;
     position: fixed;
     top: 50%;
     left: 50%;
