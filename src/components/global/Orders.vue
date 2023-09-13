@@ -80,7 +80,9 @@
                     </div>
 
                     <ButtonDelete class="col-1" @click="showConfirmationWindow" />
-                    <Popup v-if="isInfoPopupVisible"/>
+                    <Popup v-if="isInfoPopupVisible">
+                        {{order.title}}
+                    </Popup>
                     <!-- @click="deleteOrder(order.id)" -->
                 </div>
             </ListItem>
