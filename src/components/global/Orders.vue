@@ -2,8 +2,6 @@
     import {orders} from '../../store/front-end-data.json';
     import {products} from '../../store/front-end-data.json';
     // import axios from 'axios';
-    import ButtonDelete from './Buttons/ButtonDelete.vue';
-import ButtonMenu from './Buttons/ButtonMenu.vue';
 
     const getOrders = function () {
         let ordersList = []; 
@@ -46,13 +44,13 @@ import ButtonMenu from './Buttons/ButtonMenu.vue';
     <div class="order-list">
         <ul class="list-group">
             Приходы
-            <li class="list-group-item" v-for="order in getOrders()" :key="order.id">
-                <div class="row">
+            <ListItem v-for="order in getOrders()" :key="order.id">
+                <div class="row d-flex align-items-center">
                     <a class="order-link col-4" href="#">
                         {{order.title}}
                     </a>
-                    <div class="col-2 d-flex justify-content-around">
-                        <ButtonMenu></ButtonMenu>
+                    <div class="col-2 d-flex justify-content-around align-items-center">
+                        <ButtonMenu/>
                         <div>
                             {{  getOrderProducts(order.id).length }}
                             <div>Продукта</div>
@@ -68,9 +66,9 @@ import ButtonMenu from './Buttons/ButtonMenu.vue';
                         {{ getProductsPrice(order.id).uahPrice }}UAH
                     </div>
 
-                    <ButtonDelete class="col-1" @click="deleteOrder(order.id)"></ButtonDelete>
+                    <ButtonDelete class="col-1" @click="deleteOrder(order.id)"/>
                 </div>
-            </li>
+            </ListItem>
         </ul>
     </div> 
 </template>
@@ -81,27 +79,6 @@ import ButtonMenu from './Buttons/ButtonMenu.vue';
         font-size: 22px;
         font-weight: normal;
         color: #546E7A;
-        .list-group-item{
-            width: 100%;
-            border-radius: 4px;
-            border: 2px solid #CFD8DC;
-            .order-link{
-
-            }
-            .icon-menu{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                width: 35px;
-                height: 35px;
-                border-radius: 100%;
-                border: 1px solid #CFD8DC;
-                .bi-list{
-                    margin-left: -5px;
-                }
-            }
-        }
     }
 }
 

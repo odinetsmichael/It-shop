@@ -5,6 +5,7 @@ import Orders from './Orders.vue'
 import Products from './Products.vue'
 import Overview from './Overview.vue';
 import SessionCounter from './SessionCounter.vue';
+import ListItem from './ListItem.vue';
 import ButtonDelete from './Buttons/ButtonDelete.vue';
 import ButtonMenu from './Buttons/ButtonMenu.vue';
 
@@ -17,7 +18,8 @@ const components = [
     {name: 'Overview', component: Overview },
     {name: 'ButtonDelete', component: ButtonDelete },
     {name: 'ButtonMenu', component: ButtonMenu },
-    {name: 'SessionCounter', component: SessionCounter }
+    {name: 'SessionCounter', component: SessionCounter },
+    {name: 'ListItem', component: ListItem }
 ]
 
 export default {
