@@ -1,13 +1,13 @@
 <script setup>
     // import axios from 'axios';
     import { getOrders} from '../../use/orderUtils';
-    import {getOrderProducts, getProductsPrice } from '../../use/productsUtils';
+    import {getOrderProducts, getOrderProductsPrice } from '../../use/productsUtils';
     import {ref} from 'vue';
     const isInfoPopupVisible = ref(false);
     
     function showConfirmationWindow() {
         isInfoPopupVisible.value = true;
-    }
+    }   
 </script>
 
 <template>
@@ -30,12 +30,12 @@
 
                     </div>
                     <div class="d-flex justify-content-center">
-                        {{  order.date }}
+                        {{  order.date.slice(0,10) }}
                     </div>
     
                     <div class="col-2">
-                        {{ getProductsPrice(order.id).usdPrice }}$
-                        {{ getProductsPrice(order.id).uahPrice }}UAH
+                        {{ getOrderProductsPrice(order.id).usdPrice }}$
+                        {{ getOrderProductsPrice(order.id).uahPrice }}UAH
                     </div>
 
                     <ButtonDelete class="button-delete" @click="showConfirmationWindow" />

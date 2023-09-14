@@ -1,5 +1,5 @@
 <script setup>
-    import { getProducts, getProductsGuarantee } from '../../use/productsUtils';
+    import { getProducts, getProductsGuaranteeStart, getProductsGuaranteeEnd, getProductsPrice } from '../../use/productsUtils';
 </script>
 
 <template>
@@ -21,9 +21,15 @@
                     <div class="product__status unavailable " v-else>В ремонте</div>
 
                     <div class="product__guarantee">
-                        <div>с {{ getProductsGuarantee(product.id) }}</div>
-                        <div>по</div>
+                        <div>с {{ getProductsGuaranteeStart(product.guarantee) }}</div>
+                        <div>по {{ getProductsGuaranteeEnd(product.guarantee) }}</div>
                     </div>
+
+                    <div class="product__unused" v-if="product.isNew == 0">новый</div>
+                    <div class="product__used" v-else>б/у</div>
+
+                    <div class="product__price">{{ getProductsPrice(product.price).usdPrice }}</div>
+                    <div class="product__price">{{ getProductsPrice(product.price).uahPrice }}</div>
                 </div>
             </ListItem>
         </ul>

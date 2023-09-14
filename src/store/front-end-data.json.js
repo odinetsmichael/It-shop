@@ -46,7 +46,7 @@ export const products = [
   {
     id: 2,
     serialNumber: 1234,
-    isNew: 1,
+    isNew: 0,
     status: 'free',
     photo: 'https://antesports.com/wp-content/uploads/2023/07/Ant-Esports-H81-5.png',
     title: 'Product 1',

@@ -17,11 +17,18 @@ export const getOrderProducts = function (ordersId) {
   })
 }
 
-export const getProductsGuarantee = function (productId){
-
+export const getProductsGuaranteeStart = function (guarantee){
+ if(guarantee){
+  return guarantee.start.slice(0,10);
+ }
 }
+export const getProductsGuaranteeEnd = function (guarantee){
+  if(guarantee){
+   return guarantee.end.slice(0,10);
+  }
+ }
   
-export const getProductsPrice = function (ordersId) {
+export const getOrderProductsPrice = function (ordersId) {
   const products = getOrderProducts(ordersId);
   let usdPrice = 0;
   let uahPrice = 0;
@@ -33,6 +40,20 @@ export const getProductsPrice = function (ordersId) {
         uahPrice = uahPrice + products[i].price[j].value;
       }
     }
+  }
+  return { usdPrice: usdPrice, uahPrice: uahPrice };
+}
+
+export const getProductsPrice = function(price) {
+  let usdPrice = 0;
+  let uahPrice = 0;
+  if(price && price.symbol  == 'USD') {
+    usdPrice = price.value
+    console.log(usdPrice)
+  }
+  else if (price && price.symbol  == 'UAH') {
+    uahPrice = price.value
+    console.log(uahPrice)
   }
   return { usdPrice: usdPrice, uahPrice: uahPrice };
 }
