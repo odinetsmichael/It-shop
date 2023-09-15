@@ -17,12 +17,13 @@
         </div>
         <ul class="list__group">
             <ListItem v-for="order in getOrders()" :key="order.id">
-                <div class="d-flex align-items-center">
-                    <OrderLink class="col-4" href="#">
+                <div class="d-flex align-items-center justify-content-between">
+                    <OrderLink class="order__name" href="#">
                         {{order.title}}
                     </OrderLink>
-                    <div class="d-flex justify-content-around align-items-center">
-                        <ButtonMenu/>
+
+                    <div class="d-flex align-items-center">
+                        <ButtonMenu class="button-menu"/>
                         <div>
                             {{ getOrderProducts(order.id).length }}
                             <div>Продукта</div>
@@ -56,6 +57,14 @@
         color: #2C3C44;
         font-weight: bold;
         margin-bottom: 30px;
+    }
+    &__name{
+        white-space: nowrap;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+    .button-menu{
+        margin-right: 15px;
     }
 }
 
