@@ -28,8 +28,8 @@
                     <div class="product__unused" v-if="product.isNew == 0">новый</div>
                     <div class="product__used" v-else>б/у</div>
 
-                    <div class="product__price">{{ getProductsPrice(product.price).usdPrice }}</div>
-                    <div class="product__price">{{ getProductsPrice(product.price).uahPrice }}</div>
+                    <div class="product__price">{{ getProductsPrice(product.price).value }}</div>
+                    <div class="product__price">{{ getProductsPrice(product.price).value }}</div>
                 </div>
             </ListItem>
         </ul>

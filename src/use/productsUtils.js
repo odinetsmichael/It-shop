@@ -2,7 +2,6 @@ import { products } from '../store/front-end-data.json';
 
 export const getProducts = function () {
   let productsList = [];
-  // ordersList = await axios.get('http://host:port/api/orders');
   productsList = products;
   return productsList;
 }
@@ -45,15 +44,13 @@ export const getOrderProductsPrice = function (ordersId) {
 }
 
 export const getProductsPrice = function(price) {
-  let usdPrice = 0;
-  let uahPrice = 0;
-  if(price && price.symbol  == 'USD') {
-    usdPrice = price.value
-    console.log(usdPrice)
-  }
-  else if (price && price.symbol  == 'UAH') {
-    uahPrice = price.value
-    console.log(uahPrice)
-  }
-  return { usdPrice: usdPrice, uahPrice: uahPrice };
+
+  let defaultPrice = price.find(p => p.isDefault == 1);
+  let secondPrice =  price.find(p => p.isDefault == 0);
+
+  let resp = { usdPrice: secondPrice, uahPrice: defaultPrice };
+
+  console.log(resp);
+
+  return resp;
 }
