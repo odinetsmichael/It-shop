@@ -11,6 +11,7 @@
 
 <style scoped>
 .overview{
+    background-color: #EEF1F3;
     position: relative;
     padding: 50px 70px;
     width: 100%;

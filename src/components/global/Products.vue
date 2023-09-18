@@ -4,8 +4,11 @@
 
 <template>
     <div class="product">
-        <div class="product__title">
-            Продукты
+        <div class="product__header">
+            <div class="product__header_title">
+                Продукты
+            </div>
+            <DropdownButton/>
         </div>
         <ul class="list-group">
             <ListItem v-for="product in getProducts()" :key="product.id">
@@ -38,12 +41,18 @@
 
 <style scoped lang="scss">
     .product{
-        &__title{
-            font-size: 32px;
-            color: #2C3C44;
-            font-weight: bold;
-            margin-bottom: 30px;
+        &__header{
+            display: flex;
+            justify-content: left;
+            align-items: end;
+            &_title{
+                font-size: 32px;
+                color: #2C3C44;
+                font-weight: bold;
+                margin-right: 30px;
+            }
         }
+
         &__image{
             margin-right: 25px;  
             object-fit: cover;
