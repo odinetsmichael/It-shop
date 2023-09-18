@@ -1,7 +1,7 @@
 <script setup>
     // import axios from 'axios';
-    import { getOrders} from '../../use/orderUtils';
-    import {getOrderProducts, getOrderProductsPrice } from '../../use/productsUtils';
+    import { getOrders} from '@/use/orderUtils';
+    import {getOrderProducts, getOrderProductsPrice } from '@/use/productsUtils';
     import {ref} from 'vue';
     const isInfoPopupVisible = ref(false);
     

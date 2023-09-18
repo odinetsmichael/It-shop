@@ -50,8 +50,8 @@ export const products = [
     status: 'free',
     photo: 'https://antesports.com/wp-content/uploads/2023/07/Ant-Esports-H81-5.png',
     title: 'Product 1',
-    type: 'Monitors',
-    specification: 'Specification 1',
+    type: 'HDD',
+    specification: 'Specification 2',
     guarantee: {
       start: '2017-06-29 12:09:33',
       end: '2017-06-29 12:09:33'

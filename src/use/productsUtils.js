@@ -1,8 +1,24 @@
+import { productsConst } from '../constants/productPageConst';
 import { products } from '../store/front-end-data.json';
 
-export const getProducts = function () {
+
+
+export const getProducts = function (specification, type) {
   let productsList = [];
-  productsList = products;
+  
+  if (specification != productsConst.FilterDefault && type != productsConst.FilterDefault ){
+    productsList = products.filter(p => p.specification == specification && p.type == type);
+  }
+  else if(specification != productsConst.FilterDefault){
+    productsList = products.filter(p => p.specification === specification);
+  }
+  else if (type != productsConst.FilterDefault){
+    productsList = products.filter(p => p.type === type);
+  }
+  else{
+    productsList = products;
+  }
+    
   return productsList;
 }
 
@@ -47,10 +63,7 @@ export const getProductsPrice = function(price) {
 
   let defaultPrice = price.find(p => p.isDefault == 1);
   let secondPrice =  price.find(p => p.isDefault == 0);
-
   let resp = { usdPrice: secondPrice, uahPrice: defaultPrice };
-
-  console.log(resp);
 
   return resp;
 }
