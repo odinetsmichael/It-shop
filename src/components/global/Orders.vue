@@ -1,17 +1,12 @@
 <script setup>
     // import axios from 'axios';
     import { getOrders} from '@/use/orderUtils';
-    import {getOrderProducts, getOrderProductsPrice } from '@/use/productsUtils';
+    import { productsUtil } from '@/use/productsUtils';
     import {isInfoPopupVisible} from '@/constants/popupPageConst'
 
-
-    
     function showConfirmationWindow() {
         isInfoPopupVisible.value = true;
     }  
-    function closeConfirmationWindow() {
-        isInfoPopupVisible.value = false;
-    } 
 
 </script>
 
@@ -30,18 +25,18 @@
                     <div class="d-flex align-items-center">
                         <ButtonMenu class="button-menu"/>
                         <div>
-                            {{ getOrderProducts(order.id).length }}
+                            {{ productsUtil.getOrderProducts(order.id).length }}
                             <div>Продукта</div>
                         </div>  
-
                     </div>
+
                     <div class="d-flex justify-content-center">
                         {{  order.date.slice(0,10) }}
                     </div>
     
                     <div class="col-2">
-                        {{ getOrderProductsPrice(order.id).usdPrice }}$
-                        {{ getOrderProductsPrice(order.id).uahPrice }}UAH
+                        {{ productsUtil.getOrderProductsPrice(order.id).usdPrice }}$
+                        {{ productsUtil.getOrderProductsPrice(order.id).uahPrice }}UAH
                     </div>
 
                     <ButtonDelete class="button-delete" @click="showConfirmationWindow" />

@@ -12,7 +12,7 @@
 <style scoped lang="scss">  
 .list-item{
     padding: 0 30px;
-    margin-top: 15px;
+    margin-bottom: 15px;
     list-style-type: none;
     width: 100%;
     background-color: #FFFFFF;

@@ -1,5 +1,5 @@
 <script setup>
-    import { getProducts, getProductsGuaranteeStart, getProductsGuaranteeEnd, getProductsPrice } from '@/use/productsUtils';
+    import { productsUtil } from '@/use/productsUtils';
     import {getFilterData, setFilterData, specificationFilter, typeFilter} from '@/use/filterUtils'
 </script>
 
@@ -44,7 +44,7 @@
         </div>
 
         <ul class="list-group">
-            <ListItem v-for="product in getProducts(specificationFilter, typeFilter)" :key="product.id">
+            <ListItem v-for="product in productsUtil.getProducts(specificationFilter, typeFilter)" :key="product.id">
                 <div class="d-flex align-items-center">
 
                     <img class="product__image" :src="product.photo" alt="photo">
@@ -57,15 +57,15 @@
                     <div class="product__status unavailable " v-else>В ремонте</div>
 
                     <div class="product__guarantee">
-                        <div>с {{ getProductsGuaranteeStart(product.guarantee) }}</div>
-                        <div>по {{ getProductsGuaranteeEnd(product.guarantee) }}</div>
+                        <div>с {{ productsUtil.getProductsGuaranteeStart(product.guarantee) }}</div>
+                        <div>по {{ productsUtil.getProductsGuaranteeEnd(product.guarantee) }}</div>
                     </div>
 
                     <div class="product__unused" v-if="product.isNew == 0">новый</div>
                     <div class="product__used" v-else>б/у</div>
 
-                    <div class="product__price">{{ getProductsPrice(product.price).uahPrice.value }}</div>
-                    <div class="product__price">{{ getProductsPrice(product.price).usdPrice.value }}</div>
+                    <div class="product__price">{{ productsUtil.getProductsPrice(product.price).uahPrice.value }}</div>
+                    <div class="product__price">{{ productsUtil.getProductsPrice(product.price).usdPrice.value }}</div>
                 </div>
             </ListItem>
         </ul>
@@ -75,6 +75,7 @@
 <style scoped lang="scss">
     .product{
         &__header{
+            margin-bottom: 20px;
             display: flex;
             justify-content: left;
             align-items: end;
