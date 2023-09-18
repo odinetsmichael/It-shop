@@ -1,8 +1,13 @@
 <script setup>
+    import {isInfoPopupVisible} from '@/constants/popupPageConst';
+
+    function closeConfirmationWindow() {
+        isInfoPopupVisible.value = false;
+    } 
 </script>
 
 <template>
-    <button class="popup-button__cancel">
+    <button @click="closeConfirmationWindow()" class="popup-button__cancel">
         <span>Отменить</span>
     </button>
 </template>

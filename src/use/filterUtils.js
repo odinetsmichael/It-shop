@@ -1,6 +1,7 @@
 import { productsConst } from '../constants/productPageConst';
 import { products } from '../store/front-end-data.json';
 import {ref} from 'vue'
+
 export let specificationFilter = ref("---");
 export let typeFilter = ref("---");
 

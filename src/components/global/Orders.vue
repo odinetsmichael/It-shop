@@ -2,12 +2,17 @@
     // import axios from 'axios';
     import { getOrders} from '@/use/orderUtils';
     import {getOrderProducts, getOrderProductsPrice } from '@/use/productsUtils';
-    import {ref} from 'vue';
-    const isInfoPopupVisible = ref(false);
+    import {isInfoPopupVisible} from '@/constants/popupPageConst'
+
+
     
     function showConfirmationWindow() {
         isInfoPopupVisible.value = true;
-    }   
+    }  
+    function closeConfirmationWindow() {
+        isInfoPopupVisible.value = false;
+    } 
+
 </script>
 
 <template>
