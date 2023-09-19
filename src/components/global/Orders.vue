@@ -23,7 +23,10 @@
                     </OrderLink>
 
                     <div class="d-flex align-items-center">
-                        <ButtonMenu class="button-menu"/>
+                        <a class="group-link" href="#/groups">
+                            <ButtonMenu class="button-menu"/>
+                        </a>
+
                         <div>
                             {{ productsUtil.getOrderProducts(order.id).length }}
                             <div>Продукта</div>
@@ -65,6 +68,10 @@
     }
     .button-menu{
         margin-right: 15px;
+    }
+    .group-link{
+        text-decoration: none;
+        color: #2C3C44;
     }
 }
 

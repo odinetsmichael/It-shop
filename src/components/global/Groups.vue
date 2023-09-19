@@ -7,7 +7,7 @@
     let orderItem = ref(undefined);
 
     function isProductVisible(id) {
-        productVisible.value = !productVisible.value;
+        productVisible.value = true;
         orderItem.value = getOrderById(id);
         return productVisible;
     } 
