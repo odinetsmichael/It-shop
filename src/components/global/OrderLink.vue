@@ -9,7 +9,7 @@
 
 <style scoped lang="scss">  
 .order-link{
-    width: 45%;
+    width: 40%;
     transition: 0.4s ease-in-out;
     color: #546E7A;
     &:hover{

@@ -57,15 +57,20 @@
                     <div class="product__status unavailable " v-else>В ремонте</div>
 
                     <div class="product__guarantee">
-                        <div>с {{ productsUtil.getProductsGuaranteeStart(product.guarantee) }}</div>
-                        <div>по {{ productsUtil.getProductsGuaranteeEnd(product.guarantee) }}</div>
+                        <div class="d-flex justify-content-center">с {{ productsUtil.getProductsGuaranteeStart(product.guarantee) }}</div>
+                        <div  class="d-flex justify-content-center" >по {{ productsUtil.getProductsGuaranteeEnd(product.guarantee) }}</div>
                     </div>
 
-                    <div class="product__unused" v-if="product.isNew == 0">новый</div>
-                    <div class="product__used" v-else>б/у</div>
+                    <div class="product__isused">
+                        <div class="product__new" v-if="product.isNew == 0">новый</div>
+                        <div class="product__used" v-else>б/у</div>
+                    </div>
 
-                    <div class="product__price">{{ productsUtil.getProductsPrice(product.price).uahPrice.value }}</div>
-                    <div class="product__price">{{ productsUtil.getProductsPrice(product.price).usdPrice.value }}</div>
+                    <div class="product__price">
+                        <div class="usd">{{ productsUtil.getProductsPrice(product.price).usdPrice.value }} $</div>
+                        <div class="uah">{{ productsUtil.getProductsPrice(product.price).uahPrice.value }} UAH</div>
+                    </div>
+
                 </div>
             </ListItem>
         </ul>
@@ -86,7 +91,36 @@
                 margin-right: 30px;
             }
         }
-
+        &__isused{
+            display: flex;
+            justify-content: center;
+            width: 15%;
+        }
+        &__status{
+            display: flex;
+            justify-content: center;
+            width: 15%;
+        }
+        &__guarantee{
+            width: 20%;
+        }
+        &__price{
+            width: 20%;
+            height: 100%;
+            
+            .usd{
+                display: flex;
+                justify-content: center;
+                height: max-content;
+                font-size: 16px;
+            }
+            .uah{
+                display: flex;
+                justify-content: center;
+                height: max-content;
+                font-size: 24px;
+            }
+        }
         &__image{
             margin-right: 25px;  
             object-fit: cover;
