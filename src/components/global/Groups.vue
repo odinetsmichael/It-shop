@@ -49,6 +49,7 @@
                 <div class="order-name">
                     {{ orderItem.title }}
                 </div>
+                <AddButton/>
                 <div>
                     <ul class="list-product">
                         <ListItem  

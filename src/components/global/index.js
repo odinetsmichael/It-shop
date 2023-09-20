@@ -12,6 +12,7 @@ import PopupButtonDelete from './Buttons/PopupButtonDelete.vue';
 import PopupButtonCancel from './Buttons/PopupButtonCancel.vue';
 import ButtonDelete from './Buttons/ButtonDelete.vue';
 import ButtonMenu from './Buttons/ButtonMenu.vue';
+import AddButton from './Buttons/AddButton.vue';
 
 
 
@@ -31,7 +32,9 @@ const components = [
     {name: 'PopupButtonCancel', component: PopupButtonCancel },
     {name: 'ButtonDelete', component: ButtonDelete },
     {name: 'ButtonMenu', component: ButtonMenu },
+    {name: 'AddButton', component: AddButton },
 ]
+
 
 export default {
     install (app) {
