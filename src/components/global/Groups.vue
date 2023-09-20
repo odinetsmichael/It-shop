@@ -1,5 +1,5 @@
 <script setup>
-    import { getOrders, getOrderById} from '@/use/orderUtils';
+    import { orderUtil } from '@/use/orderUtils';
     import { productsUtil } from '@/use/productsUtils';
     import {ref} from 'vue';
     
@@ -8,7 +8,7 @@
 
     function isProductVisible(id) {
         productVisible.value = true;
-        orderItem.value = getOrderById(id);
+        orderItem.value = orderUtil.getOrderById(id);
         return productVisible;
     } 
 </script>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="groups__orders col-4">
                 <ul class="list-group">
-                    <ListItem  v-for="order in getOrders()"
+                    <ListItem  v-for="order in orderUtil.getOrders()"
                                :key="order.id" 
                                class="list-item"
                                @click="isProductVisible(order.id)"

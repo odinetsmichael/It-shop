@@ -1,6 +1,6 @@
 <script setup>
     // import axios from 'axios';
-    import { getOrders} from '@/use/orderUtils';
+    import { orderUtil } from '@/use/orderUtils';
     import { productsUtil } from '@/use/productsUtils';
     import {isInfoPopupVisible} from '@/constants/popupPageConst'
 
@@ -16,7 +16,7 @@
             Приходы
         </div>
         <ul class="list__group">
-            <ListItem v-for="order in getOrders()" :key="order.id">
+            <ListItem v-for="order in orderUtil.getOrders()" :key="order.id">
                 <div class="d-flex align-items-center justify-content-between">
                     <OrderLink class="order__name" href="#">
                         {{order.title}}
