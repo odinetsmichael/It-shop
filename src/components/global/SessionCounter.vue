@@ -29,7 +29,8 @@
   };
   </script>
   
-  <style>
-  /* Ваши стили здесь */
+  <style scoped lang="scss"> 
+  @import '@/assets/main.scss'; 
+
   </style>
   

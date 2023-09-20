@@ -81,7 +81,8 @@
     </div>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
 .groups{
     &__title{
         font-size: 32px;

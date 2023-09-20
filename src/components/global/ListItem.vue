@@ -9,7 +9,8 @@
     </li>
 </template>
 
-<style scoped lang="scss">  
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
 .list-item{
     padding: 0 30px;
     margin-bottom: 15px;

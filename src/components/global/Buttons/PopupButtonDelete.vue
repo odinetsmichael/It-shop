@@ -8,7 +8,8 @@
     </button>
 </template>
 
-<style scoped lang="scss">  
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
     .popup-button__delete{
         transition: 0.4s ease-in-out;
         border-radius: 40px;

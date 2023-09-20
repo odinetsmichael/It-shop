@@ -66,7 +66,8 @@
   
 
   
-  <style scoped lang="scss">
+  <style scoped lang="scss"> 
+  @import '@/assets/main.scss'; 
   .nav-menu{
     position: relative;
     z-index: 5;

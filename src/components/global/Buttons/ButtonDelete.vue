@@ -7,8 +7,8 @@
     </svg>
 </template>
 
-<style scoped lang="scss">  
-
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
     svg{
         transition: 0.4s ease-in-out;
         width: max-content;

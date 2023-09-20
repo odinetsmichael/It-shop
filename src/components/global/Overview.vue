@@ -9,7 +9,8 @@
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
 .overview{
     background-color: #EEF1F3;
     position: relative;

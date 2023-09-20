@@ -13,7 +13,8 @@
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
 .header-menu{
     position: relative;
     z-index: 1000;

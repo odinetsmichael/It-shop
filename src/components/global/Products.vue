@@ -77,7 +77,8 @@
     </div> 
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
     .product{
         &__header{
             margin-bottom: 20px;

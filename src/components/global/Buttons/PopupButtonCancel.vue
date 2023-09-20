@@ -12,7 +12,8 @@
     </button>
 </template>
 
-<style scoped lang="scss">  
+<style scoped lang="scss"> 
+@import '@/assets/main.scss'; 
     .popup-button__cancel{
         margin-right: 5px;
         transition: 0.4s ease-in-out;
