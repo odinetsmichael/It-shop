@@ -2,28 +2,28 @@ export const orders = [
   {
     id: 1,
     title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    date: '2017-06-29 13:09:33',
+    date: '2017-06-04 13:09:33',
     description: 'desc',
     get products () { return products }
   },
   {
     id: 2,
     title: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ',
-    date: '2017-06-29 12:09:33',
+    date: '2017-06-24 12:09:33',
     description: 'desc',
     get products () { return products }
   },
   {
     id: 3,
     title: 'Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est',
-    date: '2017-06-29 12:22:33',
+    date: '2017-09-29 12:22:33',
     description: 'desc',
     get products () { return products },
   },
   {
     id: 4,
     title: 'Labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est',
-    date: '2019-06-29 10:09:33',
+    date: '2019-08-01 10:09:33',
     description: 'desc',
     get products () { return products },
   }
@@ -87,11 +87,11 @@ export const products = [
       {value: 100, symbol: 'USD', isDefault: 0},
       {value: 2600, symbol: 'UAH', isDefault: 1}
     ],
-    order: 2,
+    order: 3,
     date: '2019-06-29 12:09:33'
   },
   {
-    id: 2,
+    id: 4,
     serialNumber: 1234,
     isNew: 0,
     status: 'free',
@@ -104,10 +104,9 @@ export const products = [
       end: '2017-06-29 12:09:33'
     },
     price: [
-      {value: 100, symbol: 'USD', isDefault: 0},
       {value: 2600, symbol: 'UAH', isDefault: 1}
     ],
-    order: 3,
+    order: 4,
     date: '2017-06-29 12:09:33'
   }
 ]

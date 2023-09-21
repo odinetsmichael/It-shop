@@ -8,6 +8,7 @@ import SessionCounter from './SessionCounter.vue';
 import ListItem from './ListItem.vue';
 import OrderLink from './OrderLink.vue';
 import Popup from './Popup.vue';
+import SearchPanel from './SearchPanel.vue';
 import PopupButtonDelete from './Buttons/PopupButtonDelete.vue';
 import PopupButtonCancel from './Buttons/PopupButtonCancel.vue';
 import ButtonDelete from './Buttons/ButtonDelete.vue';
@@ -28,6 +29,7 @@ const components = [
     {name: 'ListItem', component: ListItem },
     {name: 'OrderLink', component: OrderLink },
     {name: 'Popup', component: Popup },
+    {name: 'SearchPanel', component: SearchPanel },
     {name: 'PopupButtonDelete', component: PopupButtonDelete },
     {name: 'PopupButtonCancel', component: PopupButtonCancel },
     {name: 'ButtonDelete', component: ButtonDelete },

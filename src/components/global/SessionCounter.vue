@@ -1,36 +1,38 @@
 <template>
-    <div>
-      <span>Счетчик активных сессий: {{ sessionCounter }}</span>
-    </div>
-  </template>
+    <div class="session-counter"> Счетчик активных сессий: {{ sessionCounter }}</div>
+</template>
   
-  <script>
+<script>
   import { ref, onMounted } from 'vue';
   import io from 'socket.io-client';
-  
+
   export default {
     setup() {
       const sessionCounter = ref(0);
-  
+
       const socket = io();
-  
+
       socket.on('updateSessions', (activeSessions) => {
         sessionCounter.value = activeSessions;
       });
-  
+
       onMounted(() => {
         console.log('Компонент App монтирован.');
       });
-  
+
       return {
         sessionCounter,
       };
     },
   };
-  </script>
+</script>
   
-  <style scoped lang="scss"> 
+<style scoped lang="scss"> 
   @import '@/assets/main.scss'; 
+  .session-counter{
+    width: 60%;
+    font-size: 14px;
+  }
 
-  </style>
+</style>
   

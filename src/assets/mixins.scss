@@ -1,0 +1,33 @@
+@mixin main-header{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+@mixin main-title{
+    font-size: 32px;
+    color: #2C3C44;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+@mixin big-add-button {
+    position: relative;
+    display: block;
+    width: 45px;
+    height: 45px;
+    background-color: $main-green;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 5px solid #79A94B;
+    &::after{
+        content: '+';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: #FFFF;
+        font-size: 16px;
+    }
+}

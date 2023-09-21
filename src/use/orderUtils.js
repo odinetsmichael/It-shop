@@ -20,9 +20,30 @@ export let orderUtil = function() {
     };
   }
 
+  function orderDateFormate(date){
+    let orderDate = new Date(date);
+    let year = orderDate.getFullYear();
+    let month = orderDate.toLocaleString('ru-US', { month: 'short' }).slice(0, -1);
+    month = month.charAt(0).toUpperCase() + month.slice(1);
+
+    let day = orderDate.getDate();
+    let formattedDay = (day < 10) ? "0" + day : day.toString();
+
+    return `${formattedDay}/${month}/${year}`
+  }
+
+  function orderMonthFormate(date) {
+    const orderDate = new Date(date);
+    const monthIndex = orderDate.getMonth() + 1; 
+    return monthIndex < 10 ? `0${monthIndex}/12` : monthIndex;
+  }
+
+
   return {
     getOrders: getOrders,
     getOrderById: getOrderById,
+    orderDateFormate: orderDateFormate,
+    orderMonthFormate: orderMonthFormate,
   };
 
 }();

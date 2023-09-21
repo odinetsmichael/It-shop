@@ -86,10 +86,8 @@
             justify-content: left;
             align-items: end;
             &_title{
-                font-size: 32px;
-                color: #2C3C44;
-                font-weight: bold;
-                margin-right: 30px;
+                @include main-title;
+                
             }
         }
         &__isused{
