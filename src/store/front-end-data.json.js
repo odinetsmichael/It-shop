@@ -104,7 +104,7 @@ export const products = [
       end: '2017-06-29 12:09:33'
     },
     price: [
-      {value: 2600, symbol: 'UAH', isDefault: 1}
+      {value: 2600, symbol: 'UAH', isDefault: 1},
     ],
     order: 4,
     date: '2017-06-29 12:09:33'

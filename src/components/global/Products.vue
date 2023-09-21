@@ -67,8 +67,12 @@
                     </div>
 
                     <div class="product__price">
-                        <div class="usd">{{ productsUtil.getProductsPrice(product.price).usdPrice.value }} $</div>
-                        <div class="uah">{{ productsUtil.getProductsPrice(product.price).uahPrice.value }} UAH</div>
+                        <div v-if="productsUtil.getProductsPrice(product.price).usdPrice" class="usd">
+                            {{ productsUtil.getProductsPrice(product.price).usdPrice.value }} $
+                        </div>
+                        <div v-if="productsUtil.getProductsPrice(product.price).uahPrice" class="uah">
+                            {{ productsUtil.getProductsPrice(product.price).uahPrice.value }} UAH
+                        </div>
                     </div>
 
                 </div>
