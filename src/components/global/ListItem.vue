@@ -16,7 +16,6 @@
     margin-bottom: 15px;
     list-style-type: none;
     width: 100%;
-    background-color: #FFFFFF;
     border-radius: 4px;
     border: 2px solid #CFD8DC;
     font-size: 22px;

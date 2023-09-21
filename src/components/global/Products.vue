@@ -1,6 +1,6 @@
 <script setup>
     import { productsUtil } from '@/use/productsUtils';
-    import {getFilterData, setFilterData, specificationFilter, typeFilter} from '@/use/filterUtils'
+    import { productFilter, specificationFilter, typeFilter } from '@/use/filterUtils'
 </script>
 
 <template>
@@ -18,8 +18,8 @@
                     {{ specificationFilter  }}
                 </button>
                 <ul class="dropdown-menu">
-                    <li v-for="(specificationValue, key) in getFilterData().specifications" :key="key">
-                        <button @click="setFilterData('specification', specificationValue)" class="dropdown-item" href="#">
+                    <li v-for="(specificationValue, key) in productFilter.getFilterData().specifications" :key="key">
+                        <button @click="productFilter.setFilterData('specification', specificationValue)" class="dropdown-item" href="#">
                             {{ specificationValue }}
                         </button>
                     </li>
@@ -34,8 +34,8 @@
                     {{ typeFilter }}
                 </button>
                 <ul class="dropdown-menu">
-                    <li v-for="(typeValue, key) in getFilterData().types" :key="key">
-                        <button @click="setFilterData('type', typeValue)" class="dropdown-item">
+                    <li v-for="(typeValue, key) in productFilter.getFilterData().types" :key="key">
+                        <button @click="productFilter.setFilterData('type', typeValue)" class="dropdown-item">
                             {{ typeValue }}
                         </button>
                     </li>
